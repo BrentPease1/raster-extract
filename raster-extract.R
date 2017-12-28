@@ -2,6 +2,12 @@
 # Brent Pease
 # North Carolina State University
 
+#Checks whether libraries exist, and if not, installs them. 
+list.of.packages <- c("data.table", "raster","sp","rgdal","maptools","rgeos","here")
+new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
+if(length(new.packages)) install.packages(new.packages)
+
+
 #Load libraries
 library(data.table)
 library(raster)
